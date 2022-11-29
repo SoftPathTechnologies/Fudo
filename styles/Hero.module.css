@@ -1,0 +1,146 @@
+.container {
+    display: flex;
+    position: relative;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cherryDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
+    background-color: var(--pink);
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    color: var(--themeRed);
+    font-weight: bold;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    line-height: 5rem;
+}
+
+.miniText {
+    width: 70%;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+}
+
+.right {
+    position: relative;
+}
+
+.imageContainer {
+    width: 38rem;
+    position: absolute;
+    top: -5rem;
+    left: -5rem;
+}
+
+.contactUs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 1rem;
+    border-radius: 5rem;
+    top: 6rem;
+    left: -6rem;
+    gap: 1rem;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    color: var(--themeRed);
+    transition: all .3s ease;
+}
+
+.contactUs:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.contactUs>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3bd03b;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.pizza {
+    display: flex;
+    gap: 1rem;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 19rem;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    transition: all .3s ease;
+}
+
+.pizza>:nth-child(1) {
+    width: 6rem;
+    height: 4rem;
+    overflow: hidden;
+    border-radius: .5rem;
+}
+
+.pizza>:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.pizza:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.imageContainer>span>img {
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 2s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
