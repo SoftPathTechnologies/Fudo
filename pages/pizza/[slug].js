@@ -20,6 +20,8 @@ export default function Pizza({ pizza }) {
       : setQuantity((prev) => prev - 1);
   };
 
+  const cartData = useStore((state) => state.cart);
+
   // Add to Cart Function
   const addPizza = useStore((state) => state.addPizza);
   const addToCart = () => {
@@ -29,6 +31,7 @@ export default function Pizza({ pizza }) {
       qauntity: Quantity,
       size: Size,
     });
+    typeof window != 'undefined' && localStorage.setItem('cartItems', JSON.stringify(cartData.pizzas))
     toast.success(pizza.name + " Added to cart");
   };
 

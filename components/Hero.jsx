@@ -37,13 +37,20 @@ export default function Hero() {
           </div>
         </div>
         <div className={css.pizza}>
-            <div>
-                <Image src={Pizza1} alt="Pizza 1" layout="intrinsic" objectFit="cover" />
-            </div>
-            <div className={css.details}>
-                <span>Italian Pizza</span>
-                <span><span style={{color:"var(--themeRed)"}}>$</span>9.30</span>
-            </div>
+          <div>
+            <Image
+              src={Pizza1}
+              alt="Pizza 1"
+              layout="intrinsic"
+              objectFit="cover"
+            />
+          </div>
+          <div className={css.details}>
+            <span>Italian Pizza</span>
+            <span>
+              <span style={{ color: "var(--themeRed)" }}>₦₦</span>9.30
+            </span>
+          </div>
         </div>
       </div>
     </div>
