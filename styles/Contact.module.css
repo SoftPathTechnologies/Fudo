@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    gap: 3rem;
+    margin-top: 6rem;
+    justify-content: center;
+}
+
+.contactCard {
+    display: flex;
+    width: 70%;
+    height: 26rem;
+    padding: 2.5rem;
+    background: var(--cartBack);
+    justify-content: flex-start;
+    box-shadow: var(--shadow);
+    border-radius: 1.5rem;
+}
+
+.left {
+    width: 50%
+}
+
+.right {
+    width: 50%
+}
+
+.right>* {
+    display: flex;
+    flex-direction: column;
+}
+
+.right>:nth-child(1) {
+    font-size: 1.8rem;
+    font-weight: 600
+}
+
+.right>:nth-child(2) {
+    font-size: 0.8rem;
+    font-weight: 600
+}
+
+.contactForm {
+    margin-top: 0.8rem;
+    gap: 0.8rem;
+}
+
+.btn {
+    width: 100%
+}
