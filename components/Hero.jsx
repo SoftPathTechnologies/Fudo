@@ -4,6 +4,8 @@ import Cherry from "../assets/Cherry.png";
 import Pizza1 from "../assets/p1.jpg";
 import HeroImage from "../assets/HeroImage.png";
 import {UilPhone} from '@iconscout/react-unicons';
+import Link from "next/link";
+
 
 export default function Hero() {
   return (
@@ -31,7 +33,7 @@ export default function Hero() {
           <Image src={HeroImage} alt="Hero Image" layout="intrinsic" />
         </div>
         <div className={css.contactUs}>
-          <span>Contact Us</span>
+          <Link href={'/contact'}><span>Contact Us</span></Link>
           <div>
             <UilPhone color="white" />
           </div>

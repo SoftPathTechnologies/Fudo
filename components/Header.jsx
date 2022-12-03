@@ -29,7 +29,7 @@ export default function Header() {
         <li>
           <Link href="/#menu">Menu</Link>
         </li>
-        <li>Contact</li>
+        <li> <Link href="/contact">Contact</Link></li>
       </div>
       {/* Cart Section  */}
       <div className={css.rightside}>
