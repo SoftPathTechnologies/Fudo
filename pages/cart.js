@@ -1,7 +1,7 @@
 import { useStore } from "../store/store";
 import Layout from "../components/Layout";
 import css from "../styles/Cart.module.css";
-import { client, urlFor } from "../lib/client";
+import {urlFor } from "../lib/client";
 import Image from "next/image";
 import { UilTrashAlt } from "@iconscout/react-unicons";
 import toast, { Toaster } from "react-hot-toast";
