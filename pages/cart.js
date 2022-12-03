@@ -114,7 +114,7 @@ export default function Cart() {
             <span style={{ fontSize: "1rem", textAlign: "center" }}>
               Please Wait! Already have a Pending Order
               <span style={{ color: "var(--themeRed)", marginLeft:"0.4rem" }}>
-                <Link href={`/order/${order}`}>{order}</Link>
+                <Link href={`/order/${order}`}><a>{order}</a></Link>
               </span>
             </span>
           )}
