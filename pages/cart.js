@@ -48,7 +48,6 @@ export default function Cart() {
               </tr>
             </thead>
             <tbody className={css.tbody}>
-              {" "}
               {cartData.pizzas.length > 0 &&
                 cartData.pizzas.map((pizza, i) => {
                   const src = urlFor(pizza.image).url();
@@ -61,22 +60,21 @@ export default function Cart() {
                           width={85}
                           height={75}
                           alt=""
-                        />{" "}
+                        />
                       </td>
                       <td style={{ width: "15%" }}> {pizza.name}</td>
                       <td>
-                        {" "}
                         {pizza.size === 0
                           ? "Small"
                           : pizza.size === 1
                           ? "Medium"
-                          : "Large"}{" "}
+                          : "Large"}
                       </td>
                       <td>₦{pizza.price.toLocaleString("en-US")}</td>
                       <td> {pizza.qauntity}</td>
                       <td>
-                        ₦{" "}
-                        {(pizza.price * pizza.qauntity).toLocaleString("en-US")}{" "}
+                        ₦
+                        {(pizza.price * pizza.qauntity).toLocaleString("en-US")}
                       </td>
                       <td
                         onClick={() => removeOrder(i)}
@@ -89,7 +87,7 @@ export default function Cart() {
                       </td>
                     </tr>
                   );
-                })}{" "}
+                })}
             </tbody>
           </table>
         </div>
@@ -105,18 +103,22 @@ export default function Cart() {
               <span>₦ {total().toLocaleString("en-US")}</span>
             </div>
           </div>
-          {!order && cartData.pizzas.length > 0?(
-<div className={css.buttons}>
-            <button className="btn" onClick={handleOnDelivery}>
-              Pay on Delivery
-            </button>
-            <button className="btn">Pay Now</button>
-          </div>
-          ):(
-            <span style={{fontSize:"1rem", textAlign:"center"}}>Please Wait! Already have a Pending Order <span style={{color:"var(--themeRed)"}}><Link  href={`/order/${order}`}>{order}</Link></span></span>
+          {!order && cartData.pizzas.length > 0 ? (
+            <div className={css.buttons}>
+              <button className="btn" onClick={handleOnDelivery}>
+                Pay on Delivery
+              </button>
+              <button className="btn">Pay Now</button>
+            </div>
+          ) : (
+            <span style={{ fontSize: "1rem", textAlign: "center" }}>
+              Please Wait! Already have a Pending Order
+              <span style={{ color: "var(--themeRed)", marginLeft:"0.4rem" }}>
+                <Link href={`/order/${order}`}>{order}</Link>
+              </span>
+            </span>
           )}
-          
-        </div>  
+        </div>
         <Toaster />
         <PayOnDeliveryModal
           opened={paymentMethod === 0}

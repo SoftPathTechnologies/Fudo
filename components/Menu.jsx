@@ -29,9 +29,7 @@ export default function Menu({ pizzas }) {
                   />
                 </Link>
               </div>
-              <Link href={`./pizza/${pizza.slug.current}`}>
-                <span>{pizza.name}</span>
-              </Link>
+              <span>{pizza.name}</span>
               <span>
                 <span style={{ color: "var(--themeRed)" }}>₦ </span>
                 {pizza.price[1].toLocaleString("en-US")}

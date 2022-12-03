@@ -66,13 +66,13 @@ export default function PayOnDeliveryModal({opened, paymentMethod, setOpened}) {
           />
           <div className={css.formFooter}>
             <span>
-              You will pay{" "}
+              You will pay
               <span style={{ color: "var(--themeRed)", fontWeight: "bold" }}>
                 ₦
               </span>
               <span style={{ fontSize: "1.4rem", fontWeight: "bold" }}>
                 {parseInt(totalAmount).toLocaleString("en-US")}
-              </span>{" "}
+              </span>
               on Delivery
             </span>
             <button className="btn" type="submit">
