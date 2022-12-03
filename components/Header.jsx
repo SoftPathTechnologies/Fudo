@@ -34,7 +34,7 @@ export default function Header() {
       {/* Cart Section  */}
       <div className={css.rightside}>
         <div className={css.cart}>
-           <Link href="/cart"><UilShoppingBag size={35} color="#2E2E2E" /></Link>
+          <UilShoppingBag size={35} color="#2E2E2E" />
           <div className={css.cart_header}>{cartItems}</div>
         </div>
 
