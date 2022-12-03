@@ -3,15 +3,18 @@ import css from '../styles/PayOnDeliveryModal.module.css'
 import { UilUser, UilMapMarker , UilPhone  } from "@iconscout/react-unicons";
 import { useState } from "react";
 import { createOrder } from "../lib/orderHandler";
-import toast, { Toaster } from "react-hot-toast";
-
+import toast from "react-hot-toast";
+import { useStore } from "../store/store";
+import {useRouter} from 'next/router'
 
 
 export default function PayOnDeliveryModal({opened, paymentMethod, setOpened}) {
     const theme = useMantineTheme();
     const totalAmount = typeof window != 'undefined' && localStorage.getItem('total');
-    
+
+    const resetCart = useStore((state) => state.resetCart);
     const [formData, setformData] = useState({});
+    const router = useRouter();
 
     const handleInput = (e)=>{
       setformData({...formData, [e.target.name]:e.target.value});
@@ -19,10 +22,13 @@ export default function PayOnDeliveryModal({opened, paymentMethod, setOpened}) {
 
     const handleSubmit = async (e)=>{
       e.preventDefault(); 
-   
-      const id = await createOrder({ ...formData, totalAmount, paymentMethod});
-      toast.success("Order Placed Successfully and your ID is " + id);
-      console.log(formData, id);
+      const id = await createOrder({ ...formData, totalAmount, paymentMethod });
+      toast.success("Order Placed Successfully and your Tracking ID is " + id);
+      resetCart();
+      {
+        typeof window != "undefined" && localStorage.setItem("order_id", id);
+      }
+      router.push(`/order/${id}`);
     }
 
     return (

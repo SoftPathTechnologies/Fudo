@@ -10,11 +10,12 @@ export default async function handler(req, res) {
                     name: newOrder.name,
                     address: newOrder.address,
                     phone: newOrder.phone,
-                    total: newOrder.totalAmount,
+                    total: newOrder.total,
                     method: newOrder.paymentMethod,
                     status: 1
                 }).then((data) => {
                     res.status(200).json(data._id);
+                    console.log(req.body);
                 })
             } catch (e) {
                 console.log(e);

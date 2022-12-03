@@ -48,7 +48,7 @@ export default function Hero() {
           <div className={css.details}>
             <span>Italian Pizza</span>
             <span>
-              <span style={{ color: "var(--themeRed)" }}>₦₦</span>9.30
+              <span style={{ color: "var(--themeRed)" }}>₦</span>9.30
             </span>
           </div>
         </div>

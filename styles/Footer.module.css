@@ -27,4 +27,5 @@
 
 .social>* {
     fill: var(--themeRed);
+    cursor: pointer;
 }

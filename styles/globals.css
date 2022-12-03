@@ -6,6 +6,7 @@ body {
     color: var(--themeBlack);
     background: var(--background-color);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -66,4 +67,8 @@ a {
     font-size: 1.1rem;
     cursor: pointer;
     background-color: var(--themeRed);
+}
+
+#menu   {
+    scroll-behavior: smooth;
 }

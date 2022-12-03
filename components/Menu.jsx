@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Menu({pizzas}) {
     return (
-      <div className={css.container}>
+      <div id="menu" className={css.container}>
         <div className={css.heading}>
           <span>our menu</span>
           <span>Menu that always </span>
@@ -18,21 +18,23 @@ export default function Menu({pizzas}) {
             const src = urlFor(pizza.image).url();
             return (
               <div className={css.pizza} key={id}>
-              <Link href={`./pizza/${pizza.slug.current}`}>
-                <div className={css.imageWrapper}>
-                  <Image
-                    loader={() => src}
-                    src={src}
-                    alt=""
-                    objectFit="cover"
-                    layout="fill"
-                  />
-                </div>
-              </Link>
-                <span>{pizza.name}</span>
+                <Link href={`./pizza/${pizza.slug.current}`}>
+                  <div className={css.imageWrapper}>
+                    <Image
+                      loader={() => src}
+                      src={src}
+                      alt=""
+                      objectFit="cover"
+                      layout="fill"
+                    />
+                  </div>
+                </Link>
+                <Link href={`./pizza/${pizza.slug.current}`}>
+                  <span>{pizza.name}</span>
+                </Link>
                 <span>
-                  <span style={{color: "var(--themeRed)"}}>₦ </span>
-                  {pizza.price[1].toLocaleString('en-US')}
+                  <span style={{ color: "var(--themeRed)" }}>₦ </span>
+                  {pizza.price[1].toLocaleString("en-US")}
                 </span>
               </div>
             );
