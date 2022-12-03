@@ -6,14 +6,13 @@ import { useStore } from "../store/store";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-
 export default function Header() {
   const cartItems = useStore((state) => state.cart.pizzas.length);
   const [order, setOrder] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     setOrder(localStorage.getItem("order_id"));
-  },[]);
+  }, []);
 
   return (
     <div className={css.header}>
@@ -27,24 +26,27 @@ export default function Header() {
         <li>
           <Link href="/">Home</Link>
         </li>
-        <li><Link href="/#menu">Menu</Link></li>
+        <li>
+          <Link href="/#menu">Menu</Link>
+        </li>
         <li>Contact</li>
       </div>
       {/* Cart Section  */}
       <div className={css.rightside}>
-        <Link href="/cart">
-          <div className={css.cart}>
-            <UilShoppingBag size={35} color="#2E2E2E" />
-            <div className={css.cart_header}>{cartItems}</div>
-          </div>
-        </Link>
-        {order && (
-          <Link href={`/order/${order}`}>
-            <div className={css.cart}>
-              <UilReceipt size={35} color="#2E2E2E" />
-              <div className={css.cart_header}>1</div>
-            </div>
+        <div className={css.cart}>
+          <Link href="/cart">
+            <UilShoppingBag size={35} color="#2E2E2E" />{" "}
           </Link>
+          <div className={css.cart_header}>{cartItems}</div>
+        </div>
+
+        {order && (
+          <div className={css.cart}>
+            <Link href={`/order/${order}`}>
+              <UilReceipt size={35} color="#2E2E2E" />
+            </Link>
+            <div className={css.cart_header}>1</div>
+          </div>
         )}
       </div>
     </div>
