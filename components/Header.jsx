@@ -42,9 +42,7 @@ export default function Header() {
 
         {order && (
           <div className={css.cart}>
-            <Link href={`/order/${order}`}>
-              <UilReceipt size={35} color="#2E2E2E" />
-            </Link>
+            <Link href={`/order/${order}`}><UilReceipt size={35} color="#2E2E2E" /></Link>
             <div className={css.cart_header}>1</div>
           </div>
         )}
